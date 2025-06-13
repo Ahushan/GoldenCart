@@ -1,34 +1,29 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from '../pages/Home'
-import Header from "../pages/Header";
-import HelpCenter from '../pages/HelpCenter';
-import OrderTracking from '../pages/OrderTracking';
-import Login from '../authentication/Login';
-import Register from "../authentication/Register";
-import Fashoin from '../pages/NavPages/Fashoin';
-import Men from '../pages/NavPages/Men';
-import Women from '../pages/NavPages/Women';
-import Childern from '../pages/NavPages/Childern';
-import Footer from "../components/Footer";
-import Step_PreviousPage_Button from "../components/Step_PreviousPage_Button";
+import Home from "../pages/Home";
+import HelpCenter from "../pages/HelpCenter";
+import OrderTracking from "../pages/OrderTracking";
+import Fashoin from "../pages/NavPages/Fashion";
+import Login from "../pages/Auth/Login";
+import Register from "../pages/Auth/Register";
+import Men from "../pages/NavPages/Men";
+import Women from "../pages/NavPages/Women";
+import Childern from "../pages/NavPages/Childern";
 
 const RouteComponent = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/HelpCenter' element={<HelpCenter />} />
-        <Route path='/OrderTracking' element={<OrderTracking />} />
-        <Route path="/Login" element={<Login/>} />
-        <Route path="/Register" element={<Register/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/order-tracking" element={<OrderTracking />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
+        <Route path="/fashions" element={<Fashoin />} />
+        <Route path="/mens" element={<Men />} />
+        <Route path="/women" element={<Women />} />
 
-        <Route path="/Fashoins" element={<Fashoin/>}/>
-        <Route path="/MenS" element={<Men/>}/>
-        <Route path="/Womens" element={<Women/>}/>
-
-        <Route path="/Childerns" element={<Childern/>}/>
+        <Route path="/childern" element={<Childern />} />
       </Routes>
     </>
   );

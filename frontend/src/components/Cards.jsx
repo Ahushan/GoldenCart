@@ -1,8 +1,15 @@
-import { FaShoppingCart, FaChevronLeft, FaChevronRight } from "react-icons/fa"
+import { FaShoppingCart, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
-const Cards = ({ imageSrc, discount, title, description, rating, prize, discountPrize }) => {
+const Cards = ({
+  imageSrc,
+  discount,
+  title,
+  description,
+  rating,
+  prize,
+  discountPrize,
+}) => {
   return (
     <Link className="flex-shrink-0 flex flex-col gap-2 w-[240px] bg-slate-200 p-4 rounded-lg hover:shadow-lg transition-shadow duration-300">
       <div className="wrapper overflow-hidden h-[240px] rounded-lg relative">
@@ -31,11 +38,12 @@ const Cards = ({ imageSrc, discount, title, description, rating, prize, discount
         Add to Cart
       </button>
     </Link>
-  )
-}
+  );
+};
 export default Cards;
 
-{/* <div className="container justify-center items-center flex flex-wrap gap-4">
+{
+  /* <div className="container justify-center items-center flex flex-wrap gap-4">
           {PopularProductsData.map((product, index) => (
             <Cards
               key={index}
@@ -48,4 +56,5 @@ export default Cards;
               discountPrize={product.discountPrize}
             />
           ))}
-        </div> */}
+        </div> */
+}

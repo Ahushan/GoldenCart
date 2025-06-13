@@ -13,7 +13,7 @@ const Header = () => {
       id: 0,
       name: "Home",
       linkTo: "/",
-      subcategories: []
+      subcategories: [],
     },
     {
       id: 1,
@@ -257,36 +257,35 @@ const Header = () => {
                     onMouseEnter={() => setOpenIndex(index)}
                     onMouseLeave={() => setOpenIndex(null)}
                   >
-                    {cat.subcategories.length > 0 ? ( 
+                    {cat.subcategories.length > 0 ? (
                       <Link
-                        to={cat.linkTo} 
+                        to={cat.linkTo}
                         className="flex items-center gap-1 text-purple-800 font-semibold hover:text-purple-600"
                       >
                         {cat.name}
                       </Link>
                     ) : (
                       <Link
-                        to={cat.linkTo} 
+                        to={cat.linkTo}
                         className="text-purple-800 font-semibold hover:text-purple-600"
                       >
                         {cat.name}
                       </Link>
                     )}
 
-                    {isOpen &&
-                      cat.subcategories.length > 0 && ( 
-                        <div className="absolute top-full mt-0 -left-5 bg-white shadow-md rounded-md z-40 min-w-[150px] lg:block hidden">
-                          {cat.subcategories.map((sub) => (
-                            <Link
-                              key={sub.id}
-                              to={sub.linkTo}
-                              className="block px-4 py-2 text-sm hover:bg-purple-100"
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
+                    {isOpen && cat.subcategories.length > 0 && (
+                      <div className="absolute top-full mt-0 -left-5 bg-white shadow-md rounded-md z-40 min-w-[150px] lg:block hidden">
+                        {cat.subcategories.map((sub) => (
+                          <Link
+                            key={sub.id}
+                            to={sub.linkTo}
+                            className="block px-4 py-2 text-sm hover:bg-purple-100"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 );
               })}
