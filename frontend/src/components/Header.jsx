@@ -1,116 +1,24 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/GoldenCartLogo.png";
+import logo from "../assets/LogosImages/GoldenCartLogo.png";
 import { FaSearch } from "react-icons/fa";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { LuGitCompareArrows } from "react-icons/lu";
-import { IoIosArrowDown } from "react-icons/io";
-import SideBar from "../components/SideBar";
+// import { IoIosArrowDown } from "react-icons/io";
+import SideBar from "./SideBar";
+import ConstantData from '../data-files/Constant'
 
 const Header = () => {
-  const navCategories = [
-    {
-      id: 0,
-      name: "Home",
-      linkTo: "/",
-      subcategories: [],
-    },
-    {
-      id: 1,
-      name: "Fashion",
-      linkTo: "/Fashions",
-      subcategories: [
-        { id: 1, name: "Men", linkTo: "/Mens" },
-        { id: 2, name: "Women", linkTo: "/Womens" },
-        { id: 3, name: "Children", linkTo: "/Children" },
-      ],
-    },
-    {
-      id: 2,
-      name: "Electronics",
-      linkTo: "/Electronics", // Added linkTo
-      subcategories: [
-        { id: 4, name: "Mobile Phones", linkTo: "/MobilePhones" },
-        { id: 5, name: "Laptops", linkTo: "/Laptops" },
-        {
-          id: 6,
-          name: "Smart Watch Accessories",
-          linkTo: "/SmartWatchAccessories",
-        },
-        { id: 7, name: "Cameras", linkTo: "/Cameras" },
-      ],
-    },
-    {
-      id: 3,
-      name: "Bags",
-      linkTo: "/Bags", // Added linkTo
-      subcategories: [
-        { id: 8, name: "Handbags", linkTo: "/Handbags" },
-        { id: 9, name: "Backpacks", linkTo: "/Backpacks" },
-        { id: 10, name: "Travel Bags", linkTo: "/TravelBags" },
-      ],
-    },
-    {
-      id: 4,
-      name: "Footwear",
-      linkTo: "/Footwear", // Added linkTo
-      subcategories: [
-        { id: 11, name: "Men", linkTo: "/MenFootwear" },
-        { id: 12, name: "Women", linkTo: "/WomenFootwear" },
-        { id: 13, name: "Kids", linkTo: "/KidsFootwear" },
-      ],
-    },
-    {
-      id: 5,
-      name: "Groceries",
-      linkTo: "/Groceries", // Added linkTo
-      subcategories: [
-        { id: 14, name: "Fruits & Vegetables", linkTo: "/FruitsVegetables" },
-        { id: 15, name: "Dairy Products", linkTo: "/DairyProducts" },
-        { id: 16, name: "Beverages", linkTo: "/Beverages" },
-      ],
-    },
-    {
-      id: 6,
-      name: "Beauty",
-      linkTo: "/Beauty", // Added linkTo
-      subcategories: [
-        { id: 17, name: "Skincare", linkTo: "/Skincare" },
-        { id: 18, name: "Makeup", linkTo: "/Makeup" },
-        { id: 19, name: "Fragrances", linkTo: "/Fragrances" },
-      ],
-    },
-    {
-      id: 7,
-      name: "Wellness",
-      linkTo: "/Wellness", // Added linkTo
-      subcategories: [
-        { id: 20, name: "Supplements", linkTo: "/Supplements" },
-        { id: 21, name: "Fitness Equipment", linkTo: "/FitnessEquipment" },
-        { id: 22, name: "Personal Care", linkTo: "/PersonalCare" },
-      ],
-    },
-    {
-      id: 8,
-      name: "Jewellery",
-      linkTo: "/Jewellery", // Added linkTo
-      subcategories: [
-        { id: 23, name: "Necklaces", linkTo: "/Necklaces" },
-        { id: 24, name: "Earrings", linkTo: "/Earrings" },
-        { id: 25, name: "Bracelets", linkTo: "/Bracelets" },
-      ],
-    },
-  ];
-
+  const NavCategory = ConstantData.NavCategories;
   const [openIndex, setOpenIndex] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [clickedIndex, setClickedIndex] = useState(null);
   const dropdownRef = useRef(null);
 
-  const toggleSubcategories = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-    setClickedIndex(clickedIndex === index ? null : index);
-  };
+  // const toggleSubcategories = (index) => {
+  //   setOpenIndex(openIndex === index ? null : index);
+  //   setClickedIndex(clickedIndex === index ? null : index);
+  // };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -241,13 +149,13 @@ const Header = () => {
               <HiOutlineShoppingCart className="group-hover:scale-125 transition-all" />
             </button>
             <SideBar
-              categories={navCategories}
+              categories={NavCategory}
               isOpen={sidebarOpen}
               onClose={() => setSidebarOpen(false)}
             />
             {/* Desktop/Tablet Categories */}
             <div className="flex flex-row gap-6 items-center px-8 sm:flex ">
-              {navCategories.map((cat, index) => {
+              {NavCategory.map((cat, index) => {
                 const isOpen = openIndex === index;
 
                 return (
@@ -299,7 +207,7 @@ const Header = () => {
         <div className="sm:hidden fixed inset-0 bg-opacity-50 z-50">
           <div className="relative w-4/5  h-full p-5">
             <SideBar
-              categories={navCategories}
+              categories={NavCategory}
               isOpen={sidebarOpen}
               onClose={() => setSidebarOpen(false)}
             />

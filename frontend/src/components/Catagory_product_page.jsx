@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Cards from ".././Cards"; 
+import Cards from "./Cards"; 
 import productData from "../../data-files/PopularProductsData";
 
 const Catagory_product_page = () => {

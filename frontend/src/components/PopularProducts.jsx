@@ -3,16 +3,11 @@ import { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import ScrollableProductCards from "../../components/ScrollableProductCards";
-import PopularProductsData from "../../data-files/PopularProductsData";
-// import Cards from "../../components/Cards";
-//
+import { tabLabels } from '../data-files/componentData'; // Ensure this path is correct
 import { useRef } from "react";
 import { FaShoppingCart, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-//
 
-//MARK: CRAD COMPONENT
-
+// MARK: CARD COMPONENT
 const Cards = ({
   imageSrc,
   discount,
@@ -53,29 +48,15 @@ const Cards = ({
   );
 };
 
-//MARK: MAIN COMPONENT
-
-const PopularProducts = ({productData}) => {
+// MARK: MAIN COMPONENT
+const PopularProducts = ({ productData }) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const tabLabels = [
-    "Fashion",
-    "Electronics",
-    "Bags",
-    "Groceries",
-    "Beauty",
-    "Wellness",
-    "Jewellery",
-  ];
   const currentTabLabel = tabLabels[value];
-  console.log(currentTabLabel);
-  const ProductSeperatesData = PopularProductsData.Fashion;
-
-  //
 
   const scrollContainerRef = useRef(null);
 
@@ -91,6 +72,9 @@ const PopularProducts = ({productData}) => {
     }
   };
 
+    if (!productData || !productData[currentTabLabel]) {
+    return <p>No products available.</p>;
+  }
   return (
     <div className="bg-white py-5 mt-2">
       <div className="container">
@@ -159,24 +143,17 @@ const PopularProducts = ({productData}) => {
             className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide scroll-smooth"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {Object.entries(currentTabLabel).map(([category, products]) => (
-              <div key={category}>
-                <h2 className="text-xl font-bold mb-4">{category}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {products.map((product, index) => (
-                    <Cards
-                      key={index}
-                      imageSrc={product.imageSrc}
-                      discount={product.discount}
-                      title={product.title}
-                      description={product.description}
-                      rating={product.rating}
-                      prize={product.prize}
-                      discountPrize={product.discountPrize}
-                    />
-                  ))}
-                </div>
-              </div>
+            {productData[currentTabLabel].map((product, index) => (
+              <Cards
+                key={index}
+                imageSrc={product.imageSrc}
+                discount={product.discount}
+                title={product.title}
+                description={product.description}
+                rating={product.rating}
+                prize={product.prize}
+                discountPrize={product.discountPrize}
+              />
             ))}
           </div>
         </div>

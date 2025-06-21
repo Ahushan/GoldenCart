@@ -1,39 +1,7 @@
-import BlogData from "./BlogData";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import { LiaShippingFastSolid } from "react-icons/lia";
-import { TfiGift } from "react-icons/tfi";
-import { FaAmazonPay } from "react-icons/fa";
-import { PiKeyReturnLight } from "react-icons/pi";
-import { BsHeadset } from "react-icons/bs";
+import { BlogData, ProvidingData } from "../../data-files/componentData";
 
-const providingData = [
-  {
-    icon: <LiaShippingFastSolid />,
-    title: "Free Shipping",
-    des: "For all Orders Over $100",
-  },
-  {
-    icon: <PiKeyReturnLight />,
-    title: "30 Days Returns",
-    des: "For an Exchange Products",
-  },
-  {
-    icon: <TfiGift />,
-    title: "Special Gifts",
-    des: "Our First Products order",
-  },
-  {
-    icon: <FaAmazonPay />,
-    title: "Secured Payment",
-    des: "Payment Cards Accepted",
-  },
-  {
-    icon: <BsHeadset />,
-    title: "Support 24/7",
-    des: "Contact us Anytime",
-  },
-];
 
 const BlogCards = ({ Data }) => {
   return (
@@ -73,7 +41,7 @@ const BlogList = () => {
 
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
-        {providingData.map((data, index) => (
+        {ProvidingData.map((data, index) => (
           <div
             key={index}
             className="border p-4 flex flex-col items-center text-center bg-slate-100 rounded hover:shadow group"
