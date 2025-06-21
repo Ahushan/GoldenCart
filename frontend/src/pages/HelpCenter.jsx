@@ -1,4 +1,3 @@
-
 const HelpCenter = () => {
   return (
     <div>
