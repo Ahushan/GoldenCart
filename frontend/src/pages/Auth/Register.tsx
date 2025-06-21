@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import google from "../assets/google-logo.png";
-import facebook from "../assets/facebook-logo.png";
+// import google from "../assets/google-logo.png";
+import { FcGoogle } from "react-icons/fc";
+import { ImFacebook2 } from "react-icons/im";
+
 import { Link } from "react-router-dom";
 import Step_PreviousPage_Button from "../../components/Step_PreviousPage_Button";
 
@@ -156,11 +158,11 @@ const Register = () => {
           <span className="mx-2 text-gray-500">Or continue with</span>
         </div>
         <button className="bg-blue-700 w-full flex items-center justify-center text-white border border-gray-200 font-semibold py-1 rounded-md transition duration-200">
-          <img src={google} alt="Google Logo" className="h-5 mr-2" />
+          <FcGoogle />
           Continue with Google
         </button>
         <button className="mt-3 bg-black w-full flex items-center justify-center text-white border border-gray-200 font-semibold py-1 rounded-md transition duration-200">
-          <img src={facebook} alt="Facebook Logo" className="h-5 mr-2" />
+          <ImFacebook2 color="#1877F2" />
           Continue with Facebook
         </button>
       </div>

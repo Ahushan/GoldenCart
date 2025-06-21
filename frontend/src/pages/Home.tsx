@@ -28,7 +28,7 @@ const Home = () => {
       <LayoutContainer>
         <Iconcards IconcardsData={heroIconCardsData} />
       </LayoutContainer>
-      <PopularProducts1 ProductsData={PopularProductsData} />I
+      <PopularProducts1 PopularProducts={PopularProducts} />
       <div className="p-5 mt-2">
         <LayoutContainer>
           <CatBanner images={CatBaannerData} />
