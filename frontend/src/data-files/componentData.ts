@@ -1,8 +1,18 @@
+
+// MARK: ProvidingData
+import { LiaShippingFastSolid } from "react-icons/lia";
+import { TfiGift } from "react-icons/tfi";
+import { FaAmazonPay } from "react-icons/fa";
+import { PiKeyReturnLight } from "react-icons/pi";
+import { BsHeadset } from "react-icons/bs";
+
+
 // MARK: AutoBannerData
 import banner1 from "../assets/AutoBanner/image1.jpeg";
 import banner2 from "../assets/AutoBanner/image2.jpeg";
 import banner3 from "../assets/AutoBanner/image3.jpeg";
 import banner4 from "../assets/AutoBanner/image4.jpeg";
+
 
 // MARK: ProductBannerData
 import img1 from "./Images/ProductBannerImages/BgImages/img5.jpg";
@@ -27,7 +37,7 @@ import image8 from "./Images/CatBannerImages/img8.webp";
 import image9 from "./Images/CatBannerImages/img9.webp";
 import image10 from "./Images/CatBannerImages/img10.webp";
 
-//MARK: Products-Samll-Images
+//MARK: Products-Small-Images
 import Electronics from "./Images/IconCatagoriesImages/headphones.png";
 import Fashion from "./Images/IconCatagoriesImages/consumption.png";
 import Bags from "./Images/IconCatagoriesImages/school-bag.png";
@@ -47,13 +57,7 @@ import Sports from "./Images/IconCatagoriesImages/sports.png";
 import BlogImage1 from '../assets/BlogImages/blog1.webp'
 import BlogImage2 from '../assets/BlogImages/blog2.webp'
 import BlogImage3 from '../assets/BlogImages/blog3.webp'
-
-// MARK: ProvidingData
-import { LiaShippingFastSolid } from "react-icons/lia";
-import { TfiGift } from "react-icons/tfi";
-import { FaAmazonPay } from "react-icons/fa";
-import { PiKeyReturnLight } from "react-icons/pi";
-import { BsHeadset } from "react-icons/bs";
+import { JSX } from "react";
 
 
 // MARK: AutoBannerData
@@ -204,30 +208,37 @@ export const BlogData = [
     }
 ];
 
+ 
+type ProvidingDataItem = {
+  icon: React.ElementType;  
+  title: string;
+  des: string;
+};
+
 // MARK: ProvidingData
-export const ProvidingData = [
+export const ProvidingData: ProvidingDataItem[] = [
   {
-    icon: <LiaShippingFastSolid />,
+    icon: LiaShippingFastSolid,
     title: "Free Shipping",
     des: "For all Orders Over $100",
   },
   {
-    icon: <PiKeyReturnLight />,
+    icon: PiKeyReturnLight,
     title: "30 Days Returns",
     des: "For an Exchange Products",
   },
   {
-    icon: <TfiGift />,
+    icon: TfiGift,
     title: "Special Gifts",
     des: "Our First Products order",
   },
   {
-    icon: <FaAmazonPay />,
+    icon: FaAmazonPay,
     title: "Secured Payment",
     des: "Payment Cards Accepted",
   },
   {
-    icon: <BsHeadset />,
+    icon: BsHeadset ,
     title: "Support 24/7",
     des: "Contact us Anytime",
   },

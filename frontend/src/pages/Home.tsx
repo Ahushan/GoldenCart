@@ -1,11 +1,11 @@
-import Header from "../components/Header.jsx";
-import BlogList from "./Home/BlogList.jsx";
+import Header from "../components/Header";
+import BlogList from "./Home/BlogList";
 import ProductBanner from "../components/ProductBanner";
-import CatBanner from "../components/CatBanner.jsx";
+import CatBanner from "../components/CatBanner";
 import LayoutContainer from "../components/LayoutContainer";
 import Footer from "../components/Footer";
 import Carousel from "../components/Carousal";
-import Iconcards from "../components/Iconcards.jsx";
+import IconCards from "../components/IconCards";
 import ScrollableProductCards from "../components/ScrollableProductCards";
 import {
   AutoBannerData,
@@ -14,9 +14,9 @@ import {
   DetailedIconCardsData,
   heroIconCardsData,
   BlogData,
-} from "../data-files/componentData";
-import PopularProducts1 from "../components/PopularProducts.jsx";
-import productsData from "../data-files/Data.json";
+} from "../data-files/componentData.js";
+import PopularProducts1 from "../components/PopularProducts";
+import productsData from "../data-files/productData";
 
 const Home = () => {
   
@@ -32,7 +32,7 @@ const Home = () => {
         <Carousel images={AutoBannerData} />
       </LayoutContainer>
       <LayoutContainer>
-        <Iconcards IconcardsData={heroIconCardsData} />
+        <IconCards IconcardsData={heroIconCardsData} />
       </LayoutContainer>
       <PopularProducts1 ProductsData={PopularProductsData} />
       <div className="p-5 mt-2">
@@ -48,7 +48,7 @@ const Home = () => {
         <ScrollableProductCards ProductsData={LatestProductsData} />
       </div>
       <LayoutContainer>
-        <Iconcards IconcardsData={DetailedIconCardsData} />
+        <IconCards IconcardsData={DetailedIconCardsData} />
       </LayoutContainer>
       <div className="bg-white py-5 mt-2">
         <LayoutContainer>

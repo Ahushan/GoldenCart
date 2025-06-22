@@ -6,14 +6,14 @@ import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { LuGitCompareArrows } from "react-icons/lu";
 // import { IoIosArrowDown } from "react-icons/io";
 import SideBar from "./SideBar";
-import ConstantData from '../data-files/Constant'
+import { NavCategories } from "../data-files/constant";
 
 const Header = () => {
-  const NavCategory = ConstantData.NavCategories;
-  const [openIndex, setOpenIndex] = useState(null);
+  const NavCategory = NavCategories;
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [clickedIndex, setClickedIndex] = useState(null);
-  const dropdownRef = useRef(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   // const toggleSubcategories = (index) => {
   //   setOpenIndex(openIndex === index ? null : index);
@@ -21,8 +21,11 @@ const Header = () => {
   // };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setClickedIndex(null);
       }
     };
@@ -109,10 +112,10 @@ const Header = () => {
                   Register
                 </Link>
                 <div className="flex flex-row gap-3">
-                  <Link className="hover:text-black">
+                  <Link to="#" className="hover:text-black">
                     <LuGitCompareArrows className="font-900 hover:scale-125 transition-all" />
                   </Link>
-                  <Link className="hover:text-black">
+                  <Link to="#" className="hover:text-black">
                     <HiOutlineShoppingCart className="font-900 hover:scale-125 transition-all" />
                   </Link>
                 </div>
