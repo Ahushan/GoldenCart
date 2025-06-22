@@ -16,10 +16,10 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full h-[400px] z-30 my-3">
+    <div className="relative w-full h-fit z-30 my-3">
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className="h-[400px]">
+          <div key={index} className="h-[150px] md:h-[400px]">
             <img src={image.path} alt={`Slide ${index + 1}`} className="w-full h-full object-cover rounded-lg" />
           </div>
         ))}

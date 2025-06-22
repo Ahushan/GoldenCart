@@ -5,6 +5,12 @@
 @import "slick-carousel/slick/slick-theme.css";
  */
 
+ *{
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
 body {
   font-family: "Montserrat", serif;
   font-weight: 100%;
@@ -34,11 +40,12 @@ body {
 }
 
 .ppname::-webkit-scrollbar-track {
-  background: rgb(209, 60, 80);
+  background:rgba(128, 128, 128, 0.63);
+  border-radius: 8px;
 }
 
 .ppname::-webkit-scrollbar-thumb {
-  background: #888;
+  background: purple;
   border-radius: 4px;
 }
 

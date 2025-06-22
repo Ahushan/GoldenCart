@@ -5,7 +5,8 @@ import { BlogData, ProvidingData } from "../../data-files/componentData";
 
 const BlogCards = ({ Data }) => {
   return (
-    <div className="bg-slate-200 hover:shadow-md rounded-lg overflow-hidden transition-transform transform group">
+    <div className="bg-slate-200 hover:shadow-md rounded-lg overflow-hidden 
+    transition-transform transform group ">
       <div className="img-wrapper">
         <img
           src={Data.imgPath}
@@ -17,7 +18,7 @@ const BlogCards = ({ Data }) => {
         <h2 className="text-xl font-semibold mb-2">{Data.title}</h2>
         <p className="text-gray-500 group-hover:text-gray-800 mb-4">{Data.content}</p>
         <Link
-          to={`/blog/${Data.title.replace(/\s+/g, "-").toLowerCase()}`}
+          // to={`/blog/${Data.title.replace(/\s+/g, "-").toLowerCase()}`}
           className="group-hover:text-red-500 text-sm flex items-center transition-all"
         >
           Learn more

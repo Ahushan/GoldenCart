@@ -6,10 +6,10 @@ import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { LuGitCompareArrows } from "react-icons/lu";
 // import { IoIosArrowDown } from "react-icons/io";
 import SideBar from "./SideBar";
-import ConstantData from '../data-files/Constant'
+import {navCategoriesData} from '../data-files/Constant'
 
 const Header = () => {
-  const NavCategory = ConstantData.NavCategories;
+  const NavCategory = navCategoriesData.NavCategories;
   const [openIndex, setOpenIndex] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [clickedIndex, setClickedIndex] = useState(null);
@@ -41,22 +41,22 @@ const Header = () => {
           <div className="xs:px-2 sm:px-4 md:px-4">
             <div className="flex items-center justify-between">
               <div className="col1 w-[50%]">
-                <div className="text-[16px]">
+                <div className="md:text-[16px] text-[8px]">
                   Get up to 50% off new season styles,{" "}
-                  <span className="text-[15px] text-red-500">
+                  <span className="md:text-[15px] text-[9px] text-red-500">
                     limited time only
                   </span>
                 </div>
               </div>
-              <div className="flex flex-col gap-2 sm:flex-row sm:gap-5">
+              <div className="flex gap-4 sm:flex-row sm:gap-5">
                 <Link
-                  className="text-[16px] hover:text-blue-600 hover:translate-y-1 transition-all duration-75"
+                  className="md:text-[16px] text-[10px] hover:text-blue-600 hover:translate-y-1 transition-all duration-75"
                   to={"./HelpCenter"}
                 >
                   Help Center
                 </Link>
                 <Link
-                  className="text-[16px] hover:text-red-600 hover:translate-y-1 transition-all"
+                  className="md:text-[16px] text-[10px] hover:text-red-600 hover:translate-y-1 transition-all"
                   to={"./OrderTracking"}
                 >
                   Order Tracking
@@ -97,14 +97,16 @@ const Header = () => {
               <div className="flex  gap-2">
                 <Link
                   to={"./Login"}
-                  className="font-900 hover:translate-y-1 transition-all hover:text-red-500"
+                  className="font-900 hover:translate-y-1 transition-all hover:text-red-500
+                  md:text-[16px] text-[10px]"
                 >
                   Login
                 </Link>
                 |
                 <Link
                   to={"./Register"}
-                  className="font-900 hover:translate-y-1 transition-all mr-5 hover:text-blue-500"
+                  className="font-900 hover:translate-y-1 transition-all mr-5 hover:text-blue-500
+                  md:text-[16px] text-[10px]"
                 >
                   Register
                 </Link>
@@ -124,7 +126,8 @@ const Header = () => {
         <div className="middle-strip-search h-auto bg-white  md:py-2 border-b flex justify-center items-center border-gray-200">
           <div className="relative w-[70%] sm:max-w-lg  sm:hidden">
             <input
-              className="md:pl-9 pr-1 py-2 m-2 w-full placeholder-opacity-75 border-b-2 border-purple-600 placeholder-purple-700 border-0 outline-none"
+              className="md:pl-9 pr-1 py-2 m-2 w-full placeholder-opacity-30 lowercase border-b-2
+               border-purple-600 placeholder-purple-700 border-0 outline-none"
               placeholder="Search for products . . ."
             />
             <span className="absolute xs:right-1 sm:right-1 md:right-3 top-1/2 transform hover:scale-100 transition-all p-0 m-0 rounded-full scale-75 -translate-y-5 text-gray-500">
@@ -154,7 +157,7 @@ const Header = () => {
               onClose={() => setSidebarOpen(false)}
             />
             {/* Desktop/Tablet Categories */}
-            <div className="flex flex-row gap-6 items-center px-8 sm:flex ">
+            <div className="flex-row gap-6 items-center px-8 hidden md:flex ">
               {NavCategory.map((cat, index) => {
                 const isOpen = openIndex === index;
 

@@ -8,7 +8,7 @@ import Register from "../pages/Auth/Register";
 
 const RouteComponent = () => {
   return (
-    <>
+    < div className="select-none">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/help-center" element={<HelpCenter />} />
@@ -16,7 +16,7 @@ const RouteComponent = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
-    </>
+    </div>
   );
 };
 
