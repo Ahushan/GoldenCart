@@ -46,7 +46,7 @@ const Cards = ({
   );
 };
 
-const ScrollableProductCards = ({ ProductsData }) => {
+const ScrollableProductCards = ({ products }) => {
   const scrollContainerRef = useRef(null);
 
   const scrollLeft = () => {

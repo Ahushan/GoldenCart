@@ -1,17 +1,17 @@
-import React, { useTransition } from 'react';
-import Slider from 'react-slick';
+import React, { useTransition } from "react";
+import Slider from "react-slick";
 
-const Carousel = ({ images }) => {
+const Carousel = ({ autoBanner }) => {
   const settings = {
-    dots: false, 
+    dots: false,
     infinite: true,
-    speed: 200, 
-    slidesToShow: 1, 
+    speed: 200,
+    slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    nextArrow: <SampleNextArrow />, 
-    prevArrow: <SamplePrevArrow />, 
-    autoplay: true, 
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: true,
     autoplaySpeed: 2000,
   };
 
@@ -20,7 +20,11 @@ const Carousel = ({ images }) => {
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="h-[400px]">
-            <img src={image.path} alt={`Slide ${index + 1}`} className="w-full h-full object-cover rounded-lg" />
+            <img
+              src={image.path}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover rounded-lg"
+            />
           </div>
         ))}
       </Slider>
@@ -36,7 +40,7 @@ const SampleNextArrow = (props) => {
       onClick={onClick}
       className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-transparent rounded-full p-2 shadow w-10 h-10 hover:bg-black"
     >
-      <b className='text-white'>&#10095;</b>
+      <b className="text-white">&#10095;</b>
     </button>
   );
 };
@@ -49,7 +53,7 @@ const SamplePrevArrow = (props) => {
       onClick={onClick}
       className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-transparent rounded-full p-2 shadow w-10 h-10 hover:bg-black"
     >
-      <b className='text-white'>&#10094;</b>
+      <b className="text-white">&#10094;</b>
     </button>
   );
 };

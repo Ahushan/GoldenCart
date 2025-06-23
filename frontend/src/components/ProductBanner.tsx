@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const BannerSlider = ({ banners }) => {
+const BannerSlider = ({ productBanner }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const settings = {

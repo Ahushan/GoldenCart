@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const CatBanner = ({ images = [] }) => {
+const CatBanner = ({ catBannerImages }) => {
   const settings = {
     infinite: true,
     speed: 3000,

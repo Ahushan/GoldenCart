@@ -8,64 +8,74 @@ import Carousel from "../components/Carousal";
 import IconCards from "../components/IconCards";
 import ScrollableProductCards from "../components/ScrollableProductCards";
 import {
-  AutoBannerData,
-  ProductBannerData,
-  CatBannerImages,
-  DetailedIconCardsData,
-  heroIconCardsData,
-  BlogData,
-} from "../data-files/componentData.js";
+  autoBanner,
+  productBanner,
+  catBannerImages,
+  detailedIconCards,
+  heroIconCards,
+  blogData,
+} from "../data-files/componentData";
 import PopularProducts1 from "../components/PopularProducts";
-import productsData from "../data-files/productData";
+import {
+  featuredProducts,
+  latestProducts,
+  popularProducts,
+} from "../data-files/productData";
 
 const Home = () => {
-  
-  const FeaturedProductsData = productsData.Featured;
-  const LatestProductsData = productsData.Latest;
-  const PopularProductsData = productsData.Popular;
-  console.log(PopularProductsData);
-
   return (
     <>
       <Header />
+
       <LayoutContainer>
-        <Carousel images={AutoBannerData} />
+        <Carousel autoBanner={autoBanner} />
       </LayoutContainer>
+
       <LayoutContainer>
-        <IconCards IconcardsData={heroIconCardsData} />
+        <IconCards heroIconCards={heroIconCards} />
       </LayoutContainer>
-      <PopularProducts1 ProductsData={PopularProductsData} />
+
+      <PopularProducts1 popularProducts={popularProducts} />
+
       <div className="p-5 mt-2">
         <LayoutContainer>
-          <CatBanner images={CatBannerImages} />
+          <CatBanner catBannerImages={catBannerImages} />
         </LayoutContainer>
       </div>
+
       <div className="bg-white flex flex-col py-5 mt-2">
         <LayoutContainer>
           <div className="font-semibold text-lg">Latest Products</div>
           <p className="text-sm">Stay with Modern things around you.</p>
         </LayoutContainer>
-        <ScrollableProductCards ProductsData={LatestProductsData} />
+        <ScrollableProductCards products={latestProducts} />
       </div>
+
       <LayoutContainer>
-        <IconCards IconcardsData={DetailedIconCardsData} />
+        <IconCards detailedIconCards={detailedIconCards} />
       </LayoutContainer>
+
       <div className="bg-white py-5 mt-2">
         <LayoutContainer>
           <div className="font-semibold text-lg">Featured Products</div>
           <p className="text-sm">Stay with Modern things around you.</p>
         </LayoutContainer>
       </div>
-      <ProductBanner banners={ProductBannerData} />
+
+      <ProductBanner productBanner={productBanner} />
+
       <div className="bg-white py-5 mt-2">
         <LayoutContainer>
           <div className="font-semibold text-lg">Suggested Products</div>
-          <ScrollableProductCards ProductsData={FeaturedProductsData} />
+
+          <ScrollableProductCards products={featuredProducts} />
+
           <p className="text-sm">Great suggestions for you.</p>
         </LayoutContainer>
-        <ScrollableProductCards ProductsData={LatestProductsData} />
+        <ScrollableProductCards products={latestProducts} />
       </div>
-      <BlogList Data={BlogData} />
+
+      <BlogList blogData={blogData} />
       <Footer />
     </>
   );

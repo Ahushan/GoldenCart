@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
-
-const Iconcards = ({ IconcardsData }) => {
+type IconCardsProps = {
+  heroIconCards?: { img: string; name: string }[];
+  detailedIconCards?: { img: string; name: string }[];
+};
+const Iconcards: React.FC<IconCardsProps> = ({
+  heroIconCards,
+  detailedIconCards,
+}) => {
   return (
     <div className=" mx-auto p-4 px-10 ">
       <div className="flex gap-4 overflow-x-auto flex-nowrap no-scrollbar p-4 items-center justify-start">

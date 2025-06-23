@@ -3,7 +3,7 @@ import { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { tabLabels } from '../data-files/componentData'; // Ensure this path is correct
+import { tabLabels } from "../data-files/componentData"; // Ensure this path is correct
 import { useRef } from "react";
 import { FaShoppingCart, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -49,7 +49,7 @@ const Cards = ({
 };
 
 // MARK: MAIN COMPONENT
-const PopularProducts = ({ productData }) => {
+const PopularProducts = ({ popularProducts }) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -72,7 +72,7 @@ const PopularProducts = ({ productData }) => {
     }
   };
 
-    if (!productData || !productData[currentTabLabel]) {
+  if (!productData || !productData[currentTabLabel]) {
     return <p>No products available.</p>;
   }
   return (

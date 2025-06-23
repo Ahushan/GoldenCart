@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { BlogData, ProvidingData } from "../../data-files/componentData";
 
-
 const BlogCards = ({ Data }) => {
   return (
     <div className="bg-slate-200 hover:shadow-md rounded-lg overflow-hidden transition-transform transform group">
@@ -15,7 +14,9 @@ const BlogCards = ({ Data }) => {
       </div>
       <div className="p-4">
         <h2 className="text-xl font-semibold mb-2">{Data.title}</h2>
-        <p className="text-gray-500 group-hover:text-gray-800 mb-4">{Data.content}</p>
+        <p className="text-gray-500 group-hover:text-gray-800 mb-4">
+          {Data.content}
+        </p>
         <Link
           to={`/blog/${Data.title.replace(/\s+/g, "-").toLowerCase()}`}
           className="group-hover:text-red-500 text-sm flex items-center transition-all"
@@ -28,7 +29,7 @@ const BlogCards = ({ Data }) => {
   );
 };
 
-const BlogList = () => {
+const BlogList = ({ blogData }) => {
   return (
     <div className="p-4 my-1 bg-white">
       <h1 className="font-semibold text-lg px-3 py-5">From the Blog</h1>
@@ -39,14 +40,15 @@ const BlogList = () => {
         ))}
       </div>
 
-
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
         {ProvidingData.map((data, index) => (
           <div
             key={index}
             className="border p-4 flex flex-col items-center text-center bg-slate-100 rounded hover:shadow group"
           >
-            <div className="text-3xl text-purple-500 mb-2 group-hover:text-purple-950 group-hover:scale-105">{data.icon}</div>
+            <div className="text-3xl text-purple-500 mb-2 group-hover:text-purple-950 group-hover:scale-105">
+              {data.icon}
+            </div>
             <h1 className="font-semibold">{data.title}</h1>
             <p className="text-sm text-gray-600">{data.des}</p>
           </div>
