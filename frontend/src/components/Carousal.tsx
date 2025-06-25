@@ -1,7 +1,13 @@
-import React, { useTransition } from "react";
+import React from "react";
 import Slider from "react-slick";
+import { AutoBannerItem } from "../data-files/types";
+import type { CustomArrowProps } from "react-slick";
 
-const Carousel = ({ autoBanner }) => {
+type CarouselProps = {
+  autoBanner: AutoBannerItem[];
+};
+
+const Carousel: React.FC<CarouselProps> = ({ autoBanner }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -18,10 +24,10 @@ const Carousel = ({ autoBanner }) => {
   return (
     <div className="relative w-full h-[400px] z-30 my-3">
       <Slider {...settings}>
-        {images.map((image, index) => (
+        {autoBanner.map((img, index) => (
           <div key={index} className="h-[400px]">
             <img
-              src={image.path}
+              src={img.path}
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover rounded-lg"
             />
@@ -33,7 +39,7 @@ const Carousel = ({ autoBanner }) => {
 };
 
 // Custom next arrow component
-const SampleNextArrow = (props) => {
+const SampleNextArrow: React.FC<CustomArrowProps> = (props) => {
   const { onClick } = props;
   return (
     <button
@@ -46,7 +52,7 @@ const SampleNextArrow = (props) => {
 };
 
 // Custom previous arrow component
-const SamplePrevArrow = (props) => {
+const SamplePrevArrow: React.FC<CustomArrowProps> = (props) => {
   const { onClick } = props;
   return (
     <button

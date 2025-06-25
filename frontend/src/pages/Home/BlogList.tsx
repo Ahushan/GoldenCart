@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import { BlogData, ProvidingData } from "../../data-files/componentData";
+import { blogData, ProvidingData } from "../../data-files/componentData";
 
 const BlogCards = ({ Data }) => {
   return (
@@ -35,7 +35,7 @@ const BlogList = ({ blogData }) => {
       <h1 className="font-semibold text-lg px-3 py-5">From the Blog</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {BlogData.map((data, index) => (
+        {blogData.map((data, index) => (
           <BlogCards key={index} Data={data} />
         ))}
       </div>

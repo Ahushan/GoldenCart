@@ -1,23 +1,5 @@
+import { PopularProducts, Product } from "./types";
 
-interface Product {
-  imageSrc: string;
-  discount: number;
-  title: string;
-  description: string;
-  rating: number;
-  price: string;
-  discountPrice: string;
-}
-
-export interface PopularProducts {
-  fashion: Product[];
-  electronics: Product[];
-  bags: Product[];
-  groceries: Product[];
-  beauty: Product[];
-  wellness: Product[];
-  jewellery: Product[];
-}
 
 
 export const featuredProducts: Product[] = [
