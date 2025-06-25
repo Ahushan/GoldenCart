@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -6,7 +5,11 @@ import Box from "@mui/material/Box";
 import { tabLabels } from "../data-files/componentData"; // Ensure this path is correct
 import { useRef } from "react";
 import { FaShoppingCart, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { PopularProductsType, Product, TabLabel } from "../data-files/types";
 
+type PopularProductsProps = {
+  popularProducts: PopularProductsType;
+};
 // MARK: CARD COMPONENT
 const Cards = ({
   imageSrc,
@@ -14,9 +17,9 @@ const Cards = ({
   title,
   description,
   rating,
-  prize,
-  discountPrize,
-}) => {
+  price,
+  discountPrice,
+}: Product) => {
   return (
     <div className="flex-shrink-0 flex flex-col gap-2 w-[240px] bg-slate-200 p-4 rounded-lg hover:shadow-lg transition-shadow duration-300">
       <div className="wrapper overflow-hidden h-[240px] rounded-lg relative">
@@ -36,8 +39,8 @@ const Cards = ({
           {"★".repeat(Math.floor(rating)) + "☆".repeat(5 - Math.floor(rating))}
         </div>
         <div className="flex flex-row justify-between">
-          <div className="text-sm line-through">${prize}</div>
-          <div className="text-blue-600 font-semibold">${discountPrize}</div>
+          <div className="text-sm line-through">${price}</div>
+          <div className="text-blue-600 font-semibold">${discountPrice}</div>
         </div>
       </div>
       <button className="mt-2 flex items-center justify-center hover:bg-blue-600 hover:text-white font-semibold py-1 px-2 rounded bg-white text-blue-600 border border-blue-600 transition duration-200">
@@ -49,16 +52,18 @@ const Cards = ({
 };
 
 // MARK: MAIN COMPONENT
-const PopularProducts = ({ popularProducts }) => {
+const PopularProducts: React.FC<PopularProductsProps> = ({
+  popularProducts,
+}) => {
   const [value, setValue] = useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  const currentTabLabel = tabLabels[value];
+  const currentTabLabel = tabLabels[value] as TabLabel;
 
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -72,7 +77,7 @@ const PopularProducts = ({ popularProducts }) => {
     }
   };
 
-  if (!productData || !productData[currentTabLabel]) {
+  if (!popularProducts || !popularProducts[currentTabLabel]) {
     return <p>No products available.</p>;
   }
   return (
@@ -143,7 +148,7 @@ const PopularProducts = ({ popularProducts }) => {
             className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide scroll-smooth"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {productData[currentTabLabel].map((product, index) => (
+            {popularProducts[currentTabLabel].map((product, index) => (
               <Cards
                 key={index}
                 imageSrc={product.imageSrc}
@@ -151,8 +156,8 @@ const PopularProducts = ({ popularProducts }) => {
                 title={product.title}
                 description={product.description}
                 rating={product.rating}
-                prize={product.prize}
-                discountPrize={product.discountPrize}
+                price={product.price}
+                discountPrice={product.discountPrice}
               />
             ))}
           </div>

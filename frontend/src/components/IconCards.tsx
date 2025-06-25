@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 type IconCardsProps = {
   heroIconCards?: { img: string; name: string; path: string }[];
-  detailedIconCards?: { img: string; name: string; path: string }[];
+  detailedIconCards?: { img: string; name: string; path?: string }[];
 };
 
 const IconCards: React.FC<IconCardsProps> = ({

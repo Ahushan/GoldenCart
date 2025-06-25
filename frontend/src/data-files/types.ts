@@ -10,7 +10,7 @@ export interface Product {
   discountPrice: string;
 }
 
-export interface PopularProducts {
+export interface PopularProductsType {
   fashion: Product[];
   electronics: Product[];
   bags: Product[];
@@ -45,6 +45,7 @@ export type CatBannerImage = {
 export type IconCardItem = {
   img: string;
   name: string;
+  path: string;
 };
 
 export type HeroIconCardItem = {
@@ -60,10 +61,10 @@ export type BlogItem = {
 };
 
 export type TabLabel =
-  | "Fashion"
-  | "Electronics"
-  | "Bags"
-  | "Groceries"
-  | "Beauty"
-  | "Wellness"
-  | "Jewellery";
+  | "fashion"
+  | "electronics"
+  | "bags"
+  | "groceries"
+  | "beauty"
+  | "wellness"
+  | "jewellery";

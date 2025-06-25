@@ -54,7 +54,6 @@ import Sports from "./Images/IconCatagoriesImages/sports.png";
 import BlogImage1 from "../assets/BlogImages/blog1.webp";
 import BlogImage2 from "../assets/BlogImages/blog2.webp";
 import BlogImage3 from "../assets/BlogImages/blog3.webp";
-import { JSX } from "react";
 
 // MARK: AutoBannerData
 export const autoBanner = [
