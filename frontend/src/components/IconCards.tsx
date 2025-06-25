@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 type IconCardsProps = {
-  heroIconCards?: { img: string; name: string }[];
-  detailedIconCards?: { img: string; name: string }[];
+  heroIconCards?: { img: string; name: string; path: string }[];
+  detailedIconCards?: { img: string; name: string; path: string }[];
 };
-const Iconcards: React.FC<IconCardsProps> = ({
+
+const IconCards: React.FC<IconCardsProps> = ({
   heroIconCards,
   detailedIconCards,
 }) => {
+  const cardsToRender = heroIconCards || detailedIconCards || [];
   return (
     <div className=" mx-auto p-4 px-10 ">
       <div className="flex gap-4 overflow-x-auto flex-nowrap no-scrollbar p-4 items-center justify-start">
-        {IconcardsData.map((card, index) => (
+        {cardsToRender.map((card, index) => (
           <Link
             key={index}
-            to={card.path}
+            to={card.path || "#"}
             className="flex-shrink-0 flex flex-col items-center gap-2 bg-white shadow-sm hover:shadow-lg p-4 rounded-lg w-[110px] hover:translate-y-1 hover:scale-105 transition-all duration-300"
           >
             <img
@@ -31,4 +33,4 @@ const Iconcards: React.FC<IconCardsProps> = ({
   );
 };
 
-export default Iconcards;
+export default IconCards;
