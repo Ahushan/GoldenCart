@@ -3,8 +3,13 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ProductBannerItem } from "../data-files/types";
 
-const BannerSlider = ({ productBanner }) => {
+interface ProductBanner {
+  productBanner: ProductBannerItem[];
+}
+
+const BannerSlider = ({ productBanner }: ProductBanner) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const settings = {
@@ -16,7 +21,7 @@ const BannerSlider = ({ productBanner }) => {
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: false,
-    afterChange: (current) => setActiveIndex(current),
+    afterChange: (current: number) => setActiveIndex(current),
   };
 
   return (
@@ -24,7 +29,8 @@ const BannerSlider = ({ productBanner }) => {
       {...settings}
       className="w-[98%] m-auto my-4 overflow-hidden rounded-md"
     >
-      {banners.map((banner, index) => {
+      {productBanner.map((banner, index) => {
+        console.log(banner);
         const isActive = index === activeIndex;
 
         return (

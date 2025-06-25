@@ -1,8 +1,12 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { CatBannerImage } from "../data-files/types";
 
-const CatBanner = ({ catBannerImages }) => {
+interface CatBannerType {
+  catBannerImages: CatBannerImage[];
+}
+const CatBanner = ({ catBannerImages }: CatBannerType) => {
   const settings = {
     infinite: true,
     speed: 3000,
@@ -50,7 +54,7 @@ const CatBanner = ({ catBannerImages }) => {
   return (
     <div className="w-full overflow-hidden">
       <Slider {...settings}>
-        {images.map((img, index) => (
+        {catBannerImages.map((img, index) => (
           <div key={index} className="px-2">
             <div className="w-[250px] h-[120px] sm:w-[280px] sm:h-[130px] md:w-[300px] md:h-[140px] lg:w-[320px] lg:h-[150px] xl:w-[340px] xl:h-[160px] 2xl:w-[360px] 2xl:h-[180px] rounded-md overflow-hidden">
               <img

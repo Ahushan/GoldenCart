@@ -1,5 +1,10 @@
 import { useRef } from "react";
 import { FaShoppingCart, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Product } from "../data-files/types";
+
+type ScrollableProductCardsProps = {
+  products: Product[];
+};
 
 const Cards = ({
   imageSrc,
@@ -7,9 +12,9 @@ const Cards = ({
   title,
   description,
   rating,
-  prize,
-  discountPrize,
-}) => {
+  price,
+  discountPrice,
+}: Product) => {
   return (
     <div className="flex-shrink-0 flex flex-col gap-2 w-[240px] bg-slate-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
       <div className="wrapper overflow-hidden h-[240px] rounded-lg relative">
@@ -31,9 +36,9 @@ const Cards = ({
               "☆".repeat(5 - Math.floor(rating))}
           </div>
           <div className="flex flex-row justify-between">
-            <div className="text-sm line-through">${prize}</div>
+            <div className="text-sm line-through">${price}</div>
             <div className="text-indigo-600 font-semibold">
-              ${discountPrize}
+              ${discountPrice}
             </div>
           </div>
         </div>
@@ -46,8 +51,8 @@ const Cards = ({
   );
 };
 
-const ScrollableProductCards = ({ products }) => {
-  const scrollContainerRef = useRef(null);
+const ScrollableProductCards = ({ products }: ScrollableProductCardsProps) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -90,8 +95,8 @@ const ScrollableProductCards = ({ products }) => {
         className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide scroll-smooth"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {Array.isArray(ProductsData) && ProductsData.length > 0 ? (
-          ProductsData.map((product, index) => (
+        {products && products.length > 0 ? (
+          products.map((product, index) => (
             <Cards
               key={index}
               imageSrc={product.imageSrc}
@@ -99,13 +104,13 @@ const ScrollableProductCards = ({ products }) => {
               title={product.title}
               description={product.description}
               rating={product.rating}
-              prize={product.prize}
-              discountPrize={product.discountPrize}
+              price={product.price} // ✅ match your Product type
+              discountPrice={product.discountPrice}
             />
           ))
         ) : (
           <p>No products available.</p>
-        )}{" "}
+        )}
       </div>
     </div>
   );
