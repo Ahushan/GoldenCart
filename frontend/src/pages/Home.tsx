@@ -1,11 +1,10 @@
-import Header from "../components/Header";
 import BlogList from "./Home/BlogList";
 import ProductBanner from "../components/ProductBanner";
 import CatBanner from "../components/CatBanner";
 import LayoutContainer from "../components/LayoutContainer";
 import Footer from "../components/Footer";
-import Carousel from "../components/Carousal";
-import IconCards from "../components/IconCards";
+import Carousel from "../components/Carousel";
+import IconCards from "../components/ProductCategories";
 import ScrollableProductCards from "../components/ScrollableProductCards";
 import {
   autoBanner,
@@ -14,26 +13,22 @@ import {
   detailedIconCards,
   heroIconCards,
   blogData,
-} from "../data-files/componentData";
+} from "../data/componentData";
 import PopularProducts1 from "../components/PopularProducts";
 import {
   featuredProducts,
   latestProducts,
   popularProducts,
-} from "../data-files/productData";
+} from "../data/productData";
+import ProductCategories from "../components/ProductCategories";
+import Header from "../components/layout/Header/Header";
 
 const Home = () => {
   return (
     <>
       <Header />
-
-      <LayoutContainer>
-        <Carousel autoBanner={autoBanner} />
-      </LayoutContainer>
-
-      <LayoutContainer>
-        <IconCards heroIconCards={heroIconCards} />
-      </LayoutContainer>
+      <Carousel autoBanner={autoBanner} />
+      <ProductCategories heroIconCards={heroIconCards} />
 
       <PopularProducts1 popularProducts={popularProducts} />
 

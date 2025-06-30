@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ProductBannerItem } from "../data-files/types";
+import { ProductBannerItem } from "../data/types";
 
 interface ProductBanner {
   productBanner: ProductBannerItem[];
@@ -30,7 +30,6 @@ const BannerSlider = ({ productBanner }: ProductBanner) => {
       className="w-[98%] m-auto my-4 overflow-hidden rounded-md"
     >
       {productBanner.map((banner, index) => {
-        console.log(banner);
         const isActive = index === activeIndex;
 
         return (

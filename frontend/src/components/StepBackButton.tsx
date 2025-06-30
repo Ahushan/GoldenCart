@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Step_PreviousPage_Button = () => {
+const StepBackButton = () => {
   return (
     <>
       <div className="prev_btn absolute left-4 top-4">
@@ -15,4 +15,4 @@ const Step_PreviousPage_Button = () => {
   );
 };
 
-export default Step_PreviousPage_Button;
+export default StepBackButton;

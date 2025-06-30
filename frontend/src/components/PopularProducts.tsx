@@ -2,10 +2,10 @@ import { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { tabLabels } from "../data-files/componentData"; // Ensure this path is correct
+import { tabLabels } from "../data/componentData"; // Ensure this path is correct
 import { useRef } from "react";
 import { FaShoppingCart, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { PopularProductsType, Product, TabLabel } from "../data-files/types";
+import { PopularProductsType, Product, TabLabel } from "../data/types";
 
 type PopularProductsProps = {
   popularProducts: PopularProductsType;

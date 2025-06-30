@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 // import google from "../assets/google-logo.png";
 // import facebook from "";
 import { Link } from "react-router-dom";
-import Step_PreviousPage_Button from "../../components/Step_PreviousPage_Button";
+import Step_PreviousPage_Button from "../../components/StepBackButton";
 
 const Register = () => {
   const [name, setName] = useState("");

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { FaShoppingCart, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Product } from "../data-files/types";
+import { Product } from "../data/types";
 
 type ScrollableProductCardsProps = {
   products: Product[];

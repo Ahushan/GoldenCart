@@ -5,8 +5,8 @@ import { FaSearch } from "react-icons/fa";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { LuGitCompareArrows } from "react-icons/lu";
 // import { IoIosArrowDown } from "react-icons/io";
-import SideBar from "./SideBar";
-import { NavCategories } from "../data-files/constant";
+import SideBar from "../../SideBar";
+import { NavCategories } from "../../../data/constant";
 
 const Header = () => {
   const NavCategory = NavCategories;

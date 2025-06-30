@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import { blogData, ProvidingData } from "../../data-files/componentData";
+import { blogData, ProvidingData } from "../../data/componentData";
 
 const BlogCards = ({ Data }) => {
   return (
