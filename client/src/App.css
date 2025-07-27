@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: white; 
+}
+
+::-webkit-scrollbar-thumb:hover  {
+    background: indigo; 
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 2px; 
+    background: rgb(113, 18, 180); 
+}

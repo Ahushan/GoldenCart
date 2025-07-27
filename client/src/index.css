@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+ */
+
+body {
+  font-family: "Montserrat", serif;
+  font-weight: 100%;
+  background-color: rgb(222, 206, 232);
+}
+.container {
+  width: 95%;
+  margin: auto;
+}
+.base {
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #fff;
+}
+.img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.ppname {
+  max-height: 700px;
+  overflow-y: auto;
+}
+.ppname::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ppname::-webkit-scrollbar-track {
+  background: rgb(209, 60, 80);
+}
+
+.ppname::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.ppname::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
