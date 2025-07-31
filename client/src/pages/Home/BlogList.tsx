@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import {  ProvidingData } from "../../data/componentData";
+import { ProvidingData } from "../../data/componentData";
 import React from "react";
 
 type BlogCardProps = {
@@ -13,7 +13,8 @@ type BlogCardProps = {
 
 const BlogCards = ({ Data }: BlogCardProps) => {
   return (
-    <div className="bg-slate-200 hover:shadow-md rounded-lg overflow-hidden transition-transform transform group">
+    <div className="bg-slate-200 hover:shadow-md rounded-lg overflow-hidden transition-transform transform group relative">
+
       <div className="img-wrapper">
         <img
           src={Data.imgPath}

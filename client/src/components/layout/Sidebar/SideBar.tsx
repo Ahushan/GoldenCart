@@ -33,8 +33,9 @@ const Sidebar = ({ categories, isOpen, onClose }: SideBarProps) => {
   const navigate = useNavigate();
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [isVarientsOpen, setIsVarientOpen] = useState(false);
-  const [selectedSub, setSelectedSub] = useState<NavCategory["subcategories"][0] | null>(null);
-
+  const [selectedSub, setSelectedSub] = useState<
+    NavCategory["subcategories"][0] | null
+  >(null);
 
   const handleLogout = () => {
     console.log("Logged out");
@@ -181,11 +182,16 @@ const Sidebar = ({ categories, isOpen, onClose }: SideBarProps) => {
               Browse product subcategories and variants.
             </SheetDescription>
           </SheetHeader>
-          <ul className="list-disc pl-6 flex flex-col gap-2 font-bold">
+          <ul className="list-disc pl-6 space-y-2 font-semibold text-gray-700/80">
             {selectedSub?.varients?.map((variant, index) => (
-              <Link to={`/${variant}`} key={index} className="text-gray-700 py-2">
-                {variant}
-              </Link>
+              <li key={index}>
+                <Link
+                  to={`/${variant}`}
+                  className="block py-1 hover:underline hover:text-purple-700 active:text-purple-800 transition duration-150"
+                >
+                  {variant}
+                </Link>
+              </li>
             ))}
           </ul>
         </SheetContent>

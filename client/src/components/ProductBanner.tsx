@@ -33,48 +33,55 @@ const BannerSlider = ({ productBanner }: ProductBanner) => {
         const isActive = index === activeIndex;
 
         return (
-          <div
-            key={index}
-            className="relative flex flex-col md:flex-col lg:flex-col xl:flex-row items-center 
+          <>
+            <div
+              key={index}
+              className="relative flex flex-col md:flex-col lg:flex-col xl:flex-row items-center 
             justify-between rounded-2xl min-h-[450px] sm:min-h-[500px] lg:min-h-[520px] w-full p-4 md:p-6 group"
-          >
-            {/* Background Image */}
-            <img
-              src={banner.image}
-              alt={`${banner.name} background`}
-              className="absolute inset-0 w-full h-full object-cover z-0"
-            />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 z-10" />
-
-            {/* Product Image */}
-            <motion.img
-              src={banner.productImg}
-              alt={banner.name}
-              className="relative z-20 h-52 sm:h-72 md:h-80 object-contain mb-4 md:mb-0 xl:ml-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: isActive ? 1 : 0 }}
-              transition={{ duration: 1.2 }}
-            />
-
-            {/* Content Box */}
-            <motion.div
-              className="relative z-30 bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-lg w-full md:w-2/4 lg:w-2/5"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: isActive ? 1 : 0 }}
-              transition={{ duration: 1.2 }}
             >
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
-                {banner.name}
-              </h2>
-              <p className="text-white mt-2 text-sm sm:text-base">{banner.details}</p>
-              <p className="text-white text-xs sm:text-sm mt-1">{banner.description}</p>
-              <button className="mt-4 px-5 py-2 bg-indigo-800 text-white rounded-lg shadow-md hover:bg-purple-700 transition-all text-sm sm:text-base">
-                Shop Now
-              </button>
-            </motion.div>
-          </div>
+              {/* Background Image */}
+              <img
+                src={banner.image}
+                alt={`${banner.name} background`}
+                className="absolute inset-0 w-full h-full object-cover z-0"
+              />
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40 z-10" />
+
+              {/* Product Image */}
+                <motion.img
+                  src={banner.productImg}
+                  alt={banner.name}
+                  className="relative z-20 h-52 sm:h-72 md:h-80 object-contain mb-4 md:mb-0 xl:ml-10"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isActive ? 1 : 0 }}
+                  transition={{ duration: 1.2 }}
+                />
+
+              {/* Content Box */}
+                <motion.div
+                  className="relative z-30 bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-lg w-full
+              md:w-2/4 lg:w-2/5 b2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isActive ? 1 : 0 }}
+                  transition={{ duration: 1.2 }}
+                >
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
+                    {banner.name}
+                  </h2>
+                  <p className="text-white mt-2 text-sm sm:text-base">
+                    {banner.details}
+                  </p>
+                  <p className="text-white text-xs sm:text-sm mt-1">
+                    {banner.description}
+                  </p>
+                  <button className="mt-4 px-5 py-2 bg-indigo-800 text-white rounded-lg shadow-md hover:bg-purple-700 transition-all text-sm sm:text-base">
+                    Shop Now
+                  </button>
+                </motion.div>
+            </div>
+          </>
         );
       })}
     </Slider>
