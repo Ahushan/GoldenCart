@@ -1,0 +1,56 @@
+@layer base {
+  :root {
+    --font-kanit: "Kanit", sans-serif;
+    --font-overpass: "Overpass", sans-serif;
+    --breakpoint-xs: 320px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+    --breakpoint-3xl: <1536px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-kanit);
+    font-weight: 3000;
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: var(--font-overpass);
+    line-height: 1.6;
+  }
+
+  img {
+    object-fit: cover;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .container {
+    max-width: 98%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--radius);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

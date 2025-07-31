@@ -2,8 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { AutoBannerItem } from "../data/types";
 import LayoutContainer from "./LayoutContainer";
-import NextArrowButton from "./common/Buttons/NextArrowButton";
-import PrevArrowButton from "./common/Buttons/PrevArrowButton";
+import { Link } from "react-router-dom";
 
 type CarouselProps = {
   autoBanner: AutoBannerItem[];
@@ -13,31 +12,30 @@ const Carousel: React.FC<CarouselProps> = ({ autoBanner }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 200,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
-    nextArrow: <NextArrowButton />,
-    prevArrow: <PrevArrowButton />,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
+    arrows: false,
   };
 
   return (
     <LayoutContainer>
-      <div className="relative w-full h-[400px] z-30 my-3">
+      <section className="relative w-full h-[200px] sm:h-[280px] md:h-[320px] lg:h-[380px] xl:h-[560px] 2xl:h-[480px] my-3 
+      rounded-lg overflow-hidden z-30">
         <Slider {...settings}>
           {autoBanner.map((img, index) => (
-            <div key={index} className="h-[400px]">
+            <Link to={`/${img.name}`} key={index} className="w-full h-full xl:scale-90">
               <img
                 src={img.path}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover rounded-lg"
               />
-            </div>
+            </Link>
           ))}
         </Slider>
-      </div>
+      </section>
     </LayoutContainer>
   );
 };

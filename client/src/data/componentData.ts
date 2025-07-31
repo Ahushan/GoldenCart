@@ -6,10 +6,12 @@ import { PiKeyReturnLight } from "react-icons/pi";
 import { BsHeadset } from "react-icons/bs";
 
 // MARK: AutoBannerData
-import banner1 from "../assets/AutoBanner/image1.jpeg";
-import banner2 from "../assets/AutoBanner/image2.jpeg";
-import banner3 from "../assets/AutoBanner/image3.jpeg";
-import banner4 from "../assets/AutoBanner/image4.jpeg";
+import banner1 from "../assets/HeroBanner/banner-1.jpeg";
+import banner2 from "../assets/HeroBanner/banner-2.jpeg";
+import banner3 from "../assets/HeroBanner/banner-3.jpg";
+import banner4 from "../assets/HeroBanner/banner-4.jpeg";
+import banner5 from "../assets/HeroBanner/banner-5.jpeg";
+
 
 // MARK: ProductBannerData
 import img1 from "./Images/ProductBannerImages/BgImages/img5.jpg";
@@ -58,16 +60,23 @@ import BlogImage3 from "../assets/BlogImages/blog3.webp";
 // MARK: AutoBannerData
 export const autoBanner = [
   {
+    name: 'green-shoes',
     path: banner1,
   },
   {
+    name: 'lg-tv',
     path: banner2,
   },
   {
     path: banner3,
   },
   {
+    name: 'electric-scooter',
     path: banner4,
+  },
+  {
+    name: 'sports-shoes',
+    path: banner5,
   },
 ];
 

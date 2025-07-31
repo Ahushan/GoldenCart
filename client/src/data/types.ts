@@ -27,6 +27,7 @@ export type ProvidingDataItem = {
 };
 
 export type AutoBannerItem = {
+  name?:string;
   path: string;
 };
 
@@ -68,3 +69,15 @@ export type TabLabel =
   | "beauty"
   | "wellness"
   | "jewellery";
+
+  export interface Subcategory {
+  id: number;
+  name: string;
+  varients?: string[];
+}
+
+export interface NavCategory {
+  id: number;
+  name: string;
+  subcategories: Subcategory[];
+}
